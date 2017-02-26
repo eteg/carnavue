@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div>
+    <eteg-nav-bar />
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
       <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
@@ -26,13 +27,14 @@
 </template>
 
 <script>
+  import EtegNavBar from '../components/EtegNavBar.vue';
   import Tab1 from './tab1/Tab1.vue';
   import Tab2 from './tab2/Tab2.vue';
   import Tab3 from './tab3/Tab3.vue';
   import Tab4 from './tab4/Tab4.vue';
 
   export default {
-    components: { Tab1, Tab2, Tab3, Tab4 }
+    components: { EtegNavBar, Tab1, Tab2, Tab3, Tab4 }
   }
 
 </script>
