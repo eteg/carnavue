@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div>  
     <eteg-nav-bar />
     <eteg-tabs>
       <eteg-tab title="tab 1" active="true">
@@ -15,6 +15,7 @@
         <tab4 />
       </eteg-tab>
     </eteg-tabs>
+  </div>
 </template>
 
 <script>
