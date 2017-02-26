@@ -57,17 +57,11 @@
           <p class="help-block">help</p>
         </div>
       </div>
-
     </fieldset>
   </form>
-
 </template>
 
 <script>
-  import EtegFieldset from '../../components/EtegFieldset.vue';
-
-  export default {
-    components: { EtegFieldset }
-  }
+  export default {}
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <eteg-fieldset title='Form 1' style="margin: 1em">
       form 1
     </eteg-fieldset>

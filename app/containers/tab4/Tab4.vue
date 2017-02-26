@@ -1,11 +1,9 @@
 <template>
+  <h1>tab 4</h1>
 </template>
 
 <script>
-  import EtegFieldset from '../../components/EtegFieldset.vue';
-
   export default {
-    components: { EtegFieldset }
   }
 
 </script>
