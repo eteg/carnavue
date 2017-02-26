@@ -4,7 +4,7 @@
       <div class="panel-heading" role="tab" :id="idPanelHeading">
         <h4 class="panel-title">
           <a role="button" data-toggle="collapse" :data-parent="'#' + idPanelGroup" :href="'#' + idCollapse" aria-expanded="true" :aria-controls="idCollapse">
-           {{title.toUpperCase()}}
+           {{title | capitalize}}
         </a>
         </h4>
       </div>
@@ -18,6 +18,9 @@
 </template>
 
 <script>
+
+import hFilters from '../helpers/filters.js';
+
   export default {
     props: ['title'],
 
@@ -35,7 +38,12 @@
       this.idPanelGroup = `idPanelGroup${uid}`;
       this.idPanelHeading = `idPanelHeading${uid}`;
       this.idCollapse = `idCollapse${uid}`;
+    },
+
+    filters: {
+        capitalize: hFilters.upperCase
     }
+
   }
 
 </script>
