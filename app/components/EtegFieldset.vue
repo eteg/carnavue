@@ -21,29 +21,29 @@
 
 import hFilters from '../helpers/filters.js';
 
-  export default {
-    props: ['title'],
+export default {
+  props: ['title'],
 
-    data() {
-      return {
-        open: true,
-        idPanelGroup: '',
-        idPanelHeading: '',
-        idCollapse: ''
-      }
-    },
+  data() {
+    return {
+      open: true,
+      idPanelGroup: '',
+      idPanelHeading: '',
+      idCollapse: '',
+    };
+  },
 
-    mounted() {
-      const uid = this._uid;
-      this.idPanelGroup = `idPanelGroup${uid}`;
-      this.idPanelHeading = `idPanelHeading${uid}`;
-      this.idCollapse = `idCollapse${uid}`;
-    },
+  mounted() {
+    const uid = this._uid; // eslint-disable-line no-underscore-dangle
+    this.idPanelGroup = `idPanelGroup${uid}`;
+    this.idPanelHeading = `idPanelHeading${uid}`;
+    this.idCollapse = `idCollapse${uid}`;
+  },
 
-    filters: {
-        capitalize: hFilters.upperCase
-    }
-
+  filters: {
+      capitalize: hFilters.upperCase
   }
 
+};
 </script>
+

@@ -28,7 +28,6 @@
   import Tab4 from './tab4/Tab4.vue';
 
   export default {
-    components: { EtegNavBar, EtegTabs, EtegTab, Tab1, Tab2, Tab3, Tab4 }
-  }
-
+    components: { EtegNavBar, EtegTabs, EtegTab, Tab1, Tab2, Tab3, Tab4 },
+  };
 </script>

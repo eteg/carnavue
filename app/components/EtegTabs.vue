@@ -17,8 +17,8 @@
   export default {
     data() {
       return {
-        tabs: []
-      }
+        tabs: [],
+      };
     },
 
     created() {
@@ -26,12 +26,11 @@
     },
 
     methods: {
-      selectTab(selectedTab){
-        this.tabs.forEach(function(tab) {
+      selectTab(selectedTab) {
+        this.tabs.forEach((tab) => {
           tab.selected = tab.title === selectedTab.title;
         });
-      }
-    }
+      },
+    },
   };
-
 </script>

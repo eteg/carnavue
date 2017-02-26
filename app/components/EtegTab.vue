@@ -11,15 +11,15 @@
     data() {
       return {
         id: '',
-        selected: false
-      }
+        selected: false,
+      };
     },
 
     mounted() {
-      const uid = this._uid;
+      const uid = this._uid; // eslint-disable-line no-underscore-dangle
       this.id = `tabId${uid}`;
       this.selected = this.active;
-    }
+    },
   };
-
 </script>
+
