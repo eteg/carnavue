@@ -26,6 +26,10 @@ export default {
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader'
+      },
+      {
+        test: /\.svg/,
+        loader: 'svg-url-loader'
       }
     ],
   },

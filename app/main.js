@@ -1,9 +1,9 @@
-import 'materialize-css/dist/css/materialize.css';
-import 'materialize-css/dist/js/materialize.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 import Vue from 'vue';
-import App from './components/App.vue';
- 
+import App from './containers/App.vue';
+
 new Vue({
   el: '#app',
   render: h => h(App)
