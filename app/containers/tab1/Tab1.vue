@@ -19,7 +19,6 @@
   import EtegFieldset from '../../components/EtegFieldset.vue';
 
   export default {
-    components: { EtegFieldset }
-  }
-
+    components: { EtegFieldset },
+  };
 </script>

@@ -26,16 +26,15 @@
         open: true,
         idPanelGroup: '',
         idPanelHeading: '',
-        idCollapse: ''
-      }
+        idCollapse: '',
+      };
     },
 
     mounted() {
-      const uid = this._uid;
+      const uid = this._uid; // eslint-disable-line no-underscore-dangle
       this.idPanelGroup = `idPanelGroup${uid}`;
       this.idPanelHeading = `idPanelHeading${uid}`;
       this.idCollapse = `idCollapse${uid}`;
-    }
-  }
-
+    },
+  };
 </script>

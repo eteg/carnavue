@@ -10,6 +10,15 @@ export default {
   },
   module: {
     rules: [
+       {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: "pre",
+        include: [path.resolve(__dirname, './app')],
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
