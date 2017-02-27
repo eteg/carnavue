@@ -19,7 +19,7 @@
 
 <script>
 
-import hFilters from '../helpers/filters.js';
+import hFilters from '../helpers/filters';
 
 export default {
   props: ['title'],
@@ -41,8 +41,8 @@ export default {
   },
 
   filters: {
-      capitalize: hFilters.upperCase
-  }
+    capitalize: hFilters.upperCase,
+  },
 
 };
 </script>

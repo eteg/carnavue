@@ -1,3 +1,3 @@
-export default {    
-    upperCase(text) { return text.toUpperCase();}
-}
+export default {
+  upperCase(text) { return text.toUpperCase(); },
+};
