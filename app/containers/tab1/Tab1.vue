@@ -14,17 +14,16 @@
 
   export default {
     components: { EtegForm, EtegTextInput },
-
-    data() {
-      return {
-        todos: [],
-      };
+    computed: {
+      todos() {
+        return this.$store.state.todos;
+      },
     },
 
     methods: {
       submitTodo(todo) {
         if (todo) {
-          this.todos.push(todo);
+          this.$store.commit('addTodo', todo);
         }
       },
     },
