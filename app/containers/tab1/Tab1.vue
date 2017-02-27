@@ -9,16 +9,15 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
+
   import EtegForm from '../../components/EtegForm.vue';
   import EtegTextInput from '../../components/EtegTextInput.vue';
 
   export default {
     components: { EtegForm, EtegTextInput },
-    computed: {
-      todos() {
-        return this.$store.state.todos;
-      },
-    },
+
+    computed: mapState(['todos']),
 
     methods: {
       submitTodo(todo) {
