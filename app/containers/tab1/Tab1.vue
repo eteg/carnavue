@@ -1,24 +1,32 @@
 <template>
-  <div>
-    <eteg-fieldset title='Form 1' style="margin: 1em">
-      form 1
-    </eteg-fieldset>
-    <eteg-fieldset title='Form 2' style="margin: 1em">
-      form 2
-    </eteg-fieldset>
-    <eteg-fieldset title='Form 3' style="margin: 1em">
-      form 3
-    </eteg-fieldset>
-    <eteg-fieldset title='Form 4' style="margin: 1em">
-      form 4
-    </eteg-fieldset>
-  </div>
+  <eteg-form>
+    <eteg-text-input label="To Do:" placeholder="e.g. Let's go to the mall today!" @onHitEnter="submitTodo" />
+
+    <ul>
+      <li v-for="todo in todos" v-text="todo" />
+    </ul>
+  </eteg-form>
 </template>
 
 <script>
-  import EtegFieldset from '../../components/EtegFieldset.vue';
+  import EtegForm from '../../components/EtegForm.vue';
+  import EtegTextInput from '../../components/EtegTextInput.vue';
 
   export default {
-    components: { EtegFieldset },
+    components: { EtegForm, EtegTextInput },
+
+    data() {
+      return {
+        todos: [],
+      };
+    },
+
+    methods: {
+      submitTodo(todo) {
+        if (todo) {
+          this.todos.push(todo);
+        }
+      },
+    },
   };
 </script>
