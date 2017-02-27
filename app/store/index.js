@@ -6,13 +6,28 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+let idSequenceTodo = 0;
+
 export default new Vuex.Store({
   state: {
     todos: [],
   },
   mutations: {
     addTodo(state, todo) {
-      state.todos.push(todo);
+      idSequenceTodo += 1;
+      state.todos.push({
+        id: idSequenceTodo,
+        text: todo,
+        completed: false,
+      });
+    },
+  },
+  getters: {
+    completedTodos(state) {
+      return state.todos.filter(todo => todo.completed);
+    },
+    incompletedTodos(state) {
+      return state.todos.filter(todo => !todo.completed);
     },
   },
 });
