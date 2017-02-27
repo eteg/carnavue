@@ -1,21 +1,18 @@
-import Vue from 'vue';
+import Vue from 'vue'; // eslint-disable-line import/extensions
 import test from 'ava';
 import EtegFieldset from '../EtegFieldset.vue';
 
 let mock;
 
-test.beforeEach(()=>{
-    
-    let Fieldset = Vue.extend(EtegFieldset);
+test.beforeEach(() => {
+  const Fieldset = Vue.extend(EtegFieldset);
 
-    mock = new Fieldset({
-        propsData: {title: 'Titulo'}
-    }).$mount();
-
+  mock = new Fieldset({
+    propsData: { title: 'Titulo' },
+  }).$mount();
 });
 
-test('Capitalize fieldset title.', t =>{   
-    
-    t.is(mock.$el.querySelector('a').text.includes('TITULO'), true);
-
+test('Capitalize fieldset title.', (t) => {
+  t.is(mock.$el.querySelector('a').text.includes('TITULO'), true);
 });
+
