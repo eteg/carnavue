@@ -46,6 +46,19 @@ export default {
       },
     ],
   },
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    },
+  },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true,
+  },
+  performance: {
+    hints: false,
+  },
+  // devtool: '#eval-source-map',
   plugins: [
     new webpack.ProvidePlugin({
       jquery: 'jquery',
