@@ -1,6 +1,6 @@
 <template>
   <eteg-form>
-    <eteg-text-input label="To Do:" placeholder="e.g. Let's go to the mall today!" @onHitEnter="submitTodo" />
+    <eteg-text-input label="To Do:" placeholder="e.g. Let's go to the mall today!" @onHitEnter="addTodo" />
 
     <h3>Todos:</h3>
     <ul>
@@ -20,9 +20,7 @@
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex';
-
-  import * as types from '../../store/mutation-types';
+  import { mapState, mapGetters, mapActions } from 'vuex';
 
   import EtegForm from '../../components/EtegForm.vue';
   import EtegTextInput from '../../components/EtegTextInput.vue';
@@ -36,11 +34,7 @@
     },
 
     methods: {
-      submitTodo(todo) {
-        if (todo) {
-          this.$store.commit(types.ADD_TODO, todo);
-        }
-      },
+      ...mapActions(['addTodo', 'completeTodo']),
     },
   };
 </script>
