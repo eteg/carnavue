@@ -22,6 +22,8 @@
 <script>
   import { mapState, mapGetters } from 'vuex';
 
+  import * as types from '../../store/mutation-types';
+
   import EtegForm from '../../components/EtegForm.vue';
   import EtegTextInput from '../../components/EtegTextInput.vue';
 
@@ -36,7 +38,7 @@
     methods: {
       submitTodo(todo) {
         if (todo) {
-          this.$store.commit('addTodo', todo);
+          this.$store.commit(types.ADD_TODO, todo);
         }
       },
     },
