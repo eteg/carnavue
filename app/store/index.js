@@ -1,53 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import * as types from './mutation-types';
-// import * as actions from './actions';
-// import * as getters from './getters';
+import * as actions from './actions';
+import * as getters from './getters';
+import mutations from './mutations';
+import initialState from './initial-state';
 
 Vue.use(Vuex);
 
-let idSequenceTodo = 0;
-
 export default new Vuex.Store({
-  state: {
-    todos: [],
-  },
-
-  mutations: {
-    [types.ADD_TODO](state, todo) {
-      idSequenceTodo += 1;
-      state.todos.push({
-        id: idSequenceTodo,
-        text: todo,
-        completed: false,
-      });
-    },
-
-    [types.COMPLETE_TODO](state, id) {
-      state.todos.forEach((todo) => {
-        if (id === todo.id) {
-          todo.completed = true;
-        }
-      });
-    },
-  },
-
-  actions: {
-    addTodo({ commit }, todo) {
-      commit(types.ADD_TODO, todo);
-    },
-    completeTodo({ commit }, id) {
-      commit(types.COMPLETE_TODO, id);
-    },
-  },
-
-  getters: {
-    completedTodos(state) {
-      return state.todos.filter(todo => todo.completed);
-    },
-    incompletedTodos(state) {
-      return state.todos.filter(todo => !todo.completed);
-    },
-  },
+  actions,
+  mutations,
+  getters,
+  state: initialState,
 });
