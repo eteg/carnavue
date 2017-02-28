@@ -1,10 +1,19 @@
 <template>
   <eteg-form>
-    <eteg-text-input label="To Do:" placeholder="e.g. Let's go to the mall today!" @onHitEnter="addTodo" />
+    <eteg-text-input
+      label="To Do:"
+      placeholder="e.g. Let's go to the mall today!"
+      @onHitEnter="addTodo"
+    />
 
     <h3>Todos:</h3>
     <ul>
-      <li v-for="todo in todos" v-text="todo.text" />
+      <div v-for="todo in todos">
+        <li :class="todo.completed ? 'completedTodo' : ''">
+          {{todo.text}}
+          <a v-if="!todo.completed" href="#" @click="completeTodo(todo.id)">complete</a>
+        </li>
+      </div>
     </ul>
 
     <h3>Incompleted Todos:</h3>
@@ -29,12 +38,19 @@
     components: { EtegForm, EtegTextInput },
 
     computed: {
-      ...mapState(['todos']),
-      ...mapGetters(['completedTodos', 'incompletedTodos']),
+      ...mapState('todo', ['todos']),
+      ...mapGetters('todo', ['completedTodos', 'incompletedTodos']),
     },
 
     methods: {
-      ...mapActions(['addTodo', 'completeTodo']),
+      ...mapActions('todo', ['addTodo', 'completeTodo']),
     },
   };
 </script>
+
+
+<style>
+  .completedTodo {
+    text-decoration: line-through;
+  }
+</style>

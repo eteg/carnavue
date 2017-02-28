@@ -1,8 +1,8 @@
 <template>
-  <div>  
+  <div>
     <eteg-nav-bar />
     <eteg-tabs>
-      <eteg-tab title="tab 1" active="true">
+      <eteg-tab title="To Do" active="true">
         <tab1 />
       </eteg-tab>
       <eteg-tab title="tab 2">
