@@ -1,5 +1,10 @@
 {
-  "vsicons.presets.angular": false,
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      { "language": "html", "autoFix": true },
+      { "language": "vue", "autoFix": true }
+    ],
   "files.associations": {
     "*.vue": "vue"
   }
