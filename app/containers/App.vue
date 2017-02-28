@@ -5,7 +5,7 @@
       <eteg-tab title="To Do" active="true">
         <tab1 />
       </eteg-tab>
-      <eteg-tab title="tab 2">
+      <eteg-tab title="Counter">
         <tab2 />
       </eteg-tab>
       <eteg-tab title="tab 3">
