@@ -1,14 +1,15 @@
 <template>
  <div class="form-group">
     <label :for="id">{{label}}</label>
-    <input 
-      class="form-control" 
-      type="text" 
-      :id="id" 
+    <input
+      class="form-control"
+      type="text"
+      :id="id"
       :placeholder="placeholder"
       v-model="value"
-      @keyup.enter="onHitEnter" 
+      @keyup.enter="onHitEnter"
     />
+    <span class="help-block">{{help}}</span>
   </div>
 </template>
 
@@ -22,6 +23,10 @@
       placeholder: {
         type: String,
         default: 'www',
+      },
+      help: {
+        type: String,
+        default: '',
       },
     },
 

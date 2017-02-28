@@ -3,6 +3,7 @@
     <eteg-text-input
       label="To Do:"
       placeholder="e.g. Let's go to the mall today!"
+      help="press Enter to submit!"
       @onHitEnter="addTodo"
     />
 
