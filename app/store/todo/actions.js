@@ -19,16 +19,16 @@ export const addTodo = ({ commit }, todo) => {
 
 export const completeTodo = ({ commit }, todo) => {
   const href = todo._links.self.href; // eslint-disable-line no-underscore-dangle
-
   todo.completed = true;
 
-  Vue.axios.put(href, todo).then(() => {
-    commit(types.COMPLETE_TODO, href);
+  Vue.axios.put(href, todo).then((response) => {
+    commit(types.UPDATE_TODO, response.data);
   });
 };
 
 export const getTodos = ({ commit }) => {
   Vue.axios.get('/todos', { baseURL: 'http://localhost:8080' }).then((response) => {
-    commit(types.GET_TODOS, response.data._embedded.todos); // eslint-disable-line no-underscore-dangle
+    commit(types.GET_TODOS,
+      response.data._embedded.todos); // eslint-disable-line no-underscore-dangle
   });
 };
