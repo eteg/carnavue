@@ -12,7 +12,7 @@
       <div v-for="todo in todos">
         <li :class="todo.completed ? 'completedTodo' : ''">
           {{todo.text}}
-          <a v-if="!todo.completed" href="#" @click="completeTodo(todo.id)">complete</a>
+          <a v-if="!todo.completed" href="#" @click="completeTodo(todo)">complete</a>
         </li>
       </div>
     </ul>
@@ -44,7 +44,11 @@
     },
 
     methods: {
-      ...mapActions('todo', ['addTodo', 'completeTodo']),
+      ...mapActions('todo', ['addTodo', 'completeTodo', 'getTodos']),
+    },
+
+    created() {
+      this.getTodos();
     },
   };
 </script>

@@ -1,22 +1,19 @@
 import * as types from './mutation-types';
 
-let idSequenceTodo = 0;
-
 export default {
   [types.ADD_TODO](state, todo) {
-    idSequenceTodo += 1;
-    state.todos.push({
-      id: idSequenceTodo,
-      text: todo,
-      completed: false,
-    });
+    state.todos.push(todo);
   },
 
-  [types.COMPLETE_TODO](state, id) {
+  [types.COMPLETE_TODO](state, href) {
     state.todos.forEach((todo) => {
-      if (id === todo.id) {
+      if (href === todo._links.self.href) { // eslint-disable-line no-underscore-dangle
         todo.completed = true;
       }
     });
+  },
+
+  [types.GET_TODOS](state, todos) {
+    todos.forEach(todo => state.todos.push(todo));
   },
 };
