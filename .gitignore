@@ -1,4 +1,11 @@
-node_modules/
-yarn.lock
-dist/
-debug.log
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
