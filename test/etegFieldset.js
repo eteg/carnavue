@@ -1,6 +1,6 @@
-import Vue from 'vue' // eslint-disable-line import/extensions
+import Vue from 'vue'
 import test from 'ava'
-import EtegFieldset from '../EtegFieldset.vue'
+import EtegFieldset from '~components/EtegFieldset.vue'
 
 let mock
 
